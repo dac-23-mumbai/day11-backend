@@ -62,7 +62,7 @@ async function addTodo(req, res) {
     await client.close();
     res.json({ opr: true });
   } catch (err) {
-    res.json({ opr: false });
+    res.status(500).send(err.message);
   }
 }
 
@@ -79,7 +79,7 @@ async function findAllTodo(req, res) {
     await client.close();
     res.json(list);
   } catch (err) {
-    res.json([]);
+    res.status(500).send(err.message);
   }
 }
 
@@ -103,7 +103,7 @@ async function addUserRecord(req, res) {
 
     res.json({ opr: true });
   } catch (err) {
-    res.json({ opr: false });
+    res.status(500).send(err.message);
   }
 }
 
@@ -120,7 +120,7 @@ async function findAllUser(req, res) {
     await client.close();
     res.json(list);
   } catch (err) {
-    res.json([]);
+    res.status(500).send(err.message);
   }
 }
 
