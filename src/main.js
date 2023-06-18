@@ -60,6 +60,7 @@ async function addTodo(req, res) {
     let inputDoc = {
       task: req.query.task,
       description: req.query.description,
+      numpref: req.query.numpref,
     };
     await messageColl.insertOne(inputDoc);
 
